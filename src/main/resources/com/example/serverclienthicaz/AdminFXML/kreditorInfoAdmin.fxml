@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="kreditorInfoPane" prefHeight="478.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <GridPane layoutX="9.0" layoutY="22.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.62413024902344" minWidth="10.0" prefWidth="96.62413024902344" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.44668579101562" minWidth="10.0" prefWidth="103.37586975097656" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Kreditor">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="kreditorNameTextField" editable="false" GridPane.columnIndex="1" />
+            </children>
+        </GridPane>
+        <TableView fx:id="kreditorInfoView" layoutX="7.0" layoutY="176.0" prefHeight="248.0" prefWidth="798.0">
+            <columns>
+                <TableColumn fx:id="tarix" prefWidth="113.59112930297852" text="Tarix" />
+                <TableColumn prefWidth="118.90888977050781" text="Mal" fx:id="xammalMal" />
+                <TableColumn fx:id="vahid" prefWidth="116.02223205566406" text="Vahid" />
+                <TableColumn fx:id="ceki" prefWidth="145.64999389648438" text="Miqdar" />
+                <TableColumn fx:id="mebleg" prefWidth="132.8499755859375" text="Məbləğ" />
+                <TableColumn fx:id="medaxilNr" prefWidth="169.40826416015625" text="Mədaxil Nr" />
+            </columns>
+        </TableView>
+        <TextField fx:id="search" layoutX="141.0" layoutY="137.0" onKeyReleased="#handleKeyReleased" prefHeight="26.0" prefWidth="81.0" promptText="Mal adı" />
+        <DatePicker fx:id="startDatePicker" layoutX="10.0" layoutY="88.0" prefHeight="26.0" prefWidth="130.0" promptText="Başlanğıc Tarix" />
+        <DatePicker fx:id="endDatePicker" layoutX="11.0" layoutY="138.0" prefHeight="26.0" prefWidth="113.0" promptText="Son Tarix" />
+        <Button layoutX="18.0" layoutY="436.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="17.0" prefWidth="119.0" stylesheets="@../AdminCss/button.css" text="Geri" />
+        <Button layoutX="629.0" layoutY="23.0" mnemonicParsing="false" onAction="#handlePrintButtonAction" prefHeight="17.0" prefWidth="162.0" stylesheets="@../AdminCss/button.css" text="Print" />
+    </children>
+</AnchorPane>

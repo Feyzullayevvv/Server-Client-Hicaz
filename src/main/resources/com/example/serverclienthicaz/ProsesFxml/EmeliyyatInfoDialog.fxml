@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="emeliyyatPane" prefHeight="400.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.ProsesAnbarGUI.EmeliyyatInfoDialog">
+   <children>
+      <TableView fx:id="emeliyyatTableView" layoutX="79.0" layoutY="82.0" onMouseClicked="#handleClick" prefHeight="255.0" prefWidth="587.0">
+        <columns>
+          <TableColumn fx:id="emeliyyatNr" prefWidth="49.0" text="Nr" />
+          <TableColumn fx:id="emeliyyatMal" prefWidth="125.0" text="Mal" />
+            <TableColumn fx:id="emeliyyatVahid" prefWidth="68.0" text="Vahid" />
+            <TableColumn fx:id="emeliyyatMiqdar" prefWidth="143.0" text="MIqdar" />
+            <TableColumn fx:id="emeliyyatReceptNr" prefWidth="93.0" text="ReceptNr" />
+            <TableColumn fx:id="emeliyyatEmeliyyatNr" prefWidth="108.0" text="EmeliyyatNr" />
+        </columns>
+      </TableView>
+      <Button layoutX="36.0" layoutY="343.0" mnemonicParsing="false" onAction="#handlePrintButtonAction" prefHeight="33.0" prefWidth="60.0" stylesheets="@../ProsesAnbarcss/button.css" text="Print" />
+      <TextField fx:id="dateField" editable="false" layoutX="79.0" layoutY="21.0" />
+   </children>
+</AnchorPane>

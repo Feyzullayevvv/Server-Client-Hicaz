@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="newEmeliyyatPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="818.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.AdminGUI.NewEmeliyyatAdminControlelr">
+   <children>
+      <TableView fx:id="receptTableView" layoutX="449.0" layoutY="154.0" prefHeight="111.0" prefWidth="369.0">
+        <columns>
+          <TableColumn fx:id="receptNr" prefWidth="40.0" text="Nr" />
+          <TableColumn fx:id="receptMal" prefWidth="83.79815673828125" text="Mal" />
+            <TableColumn fx:id="receptVahid" prefWidth="84.04705810546875" text="Vahid" />
+            <TableColumn fx:id="receptMiqdar" prefWidth="75.45294189453125" text="Miqdar" />
+            <TableColumn fx:id="receptReceptNr" prefWidth="87.22503662109375" text="Reçept Nr" />
+        </columns>
+      </TableView>
+      <TableView fx:id="emeliyyatTableView" layoutX="447.0" layoutY="277.0" prefHeight="119.0" prefWidth="372.0">
+        <columns>
+          <TableColumn fx:id="emeliyyatMal" prefWidth="88.22366333007812" text="Mal" />
+            <TableColumn fx:id="emeliyyatVahid" prefWidth="78.2763671875" text="Vahid" />
+            <TableColumn fx:id="emeliyyatMiqdar" prefWidth="53.7779541015625" text="Miqdar" />
+            <TableColumn fx:id="emeliyyatReceptNr" prefWidth="79.729248046875" text="ReceptNr" />
+            <TableColumn fx:id="emeliyyatTehvilNr" prefWidth="70.770751953125" text="TehvilNr" />
+        </columns>
+      </TableView>
+      <GridPane hgap="10.0" layoutX="11.0" layoutY="155.0" prefHeight="232.0" prefWidth="417.0" vgap="30.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="41.83338165283203" minHeight="10.0" prefHeight="22.791656494140625" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.31951904296875" minHeight="10.0" prefHeight="35.55558776855469" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Mal" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Arial Narrow Bold" size="26.0" />
+               </font>
+            </Label>
+            <TextField fx:id="malText" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#createMalSiyahi" prefHeight="26.0" prefWidth="44.0" text="....." GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="70.0" top="35.0" />
+               </GridPane.margin>
+            </Button>
+            <TextField fx:id="receptInfoText" editable="false" GridPane.columnIndex="1" />
+            <Button mnemonicParsing="false" onAction="#createReceptSiyahi" prefHeight="26.0" prefWidth="44.0" text="....." GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="70.0" top="35.0" />
+               </GridPane.margin>
+            </Button>
+            <Label text="Miqdar" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Arial Narrow Bold" size="26.0" />
+               </font>
+            </Label>
+            <TextField fx:id="miqdarText" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Button fx:id="elaveEtButton" mnemonicParsing="false" onAction="#handleElaveEt" styleClass="../AdminCss/button.css" stylesheets="@../AdminCss/button.css" text="Əlavə Et" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="silButton" mnemonicParsing="false" onAction="#handleDelete" prefHeight="41.0" prefWidth="48.0" stylesheets="@../AdminCss/button.css" text="Sil" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="26.0" top="5.0" />
+               </GridPane.margin>
+            </Button>
+            <Label text="Reçept">
+               <font>
+                  <Font name="Arial Narrow Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label prefHeight="17.0" prefWidth="72.0" text="İtki %" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Arial Narrow Bold" size="28.0" />
+               </font>
+            </Label>
+            <TextField fx:id="receptInfoItkiText" editable="false" GridPane.columnIndex="3" />
+            <Label text="Qalıq" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial Narrow Bold" size="26.0" />
+               </font>
+            </Label>
+            <TextField fx:id="receptInfoQaliqText" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="ReçeptNr" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial Narrow Bold" size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="receptInfoNrText" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Button fx:id="bittiButton" layoutX="685.0" layoutY="434.0" mnemonicParsing="false" onAction="#handleBitti" prefHeight="15.0" prefWidth="117.0" stylesheets="@../AdminCss/button.css" text="Bitti" />
+      <Button fx:id="geriButton" layoutX="18.0" layoutY="434.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="26.0" prefWidth="131.0" stylesheets="@../AdminCss/button.css" text="Geri" />
+      <DatePicker fx:id="datePicker" layoutX="34.0" layoutY="11.0" prefHeight="26.0" prefWidth="146.0" />
+      <TableView fx:id="virtualAnbarTableView" layoutX="426.0" prefHeight="149.0" prefWidth="393.0">
+        <columns>
+          <TableColumn fx:id="nr" prefWidth="75.0" text="Nr" />
+          <TableColumn fx:id="malNr" prefWidth="75.0" text="MalNr" />
+            <TableColumn fx:id="mal" prefWidth="75.0" text="Mal" />
+            <TableColumn fx:id="vahid" prefWidth="75.0" text="Vahid" />
+            <TableColumn fx:id="virtualMiqdar" prefWidth="92.0" text="Miqdar" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

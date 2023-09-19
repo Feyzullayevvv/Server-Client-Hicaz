@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="240.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.ProsesAnbarGUI.ReceptInfoController">
+    <children>
+        <TableView fx:id="receptItemTableView" layoutX="14.0" layoutY="20.0" prefHeight="200.0" prefWidth="342.0">
+            <columns>
+                <TableColumn fx:id="nr" prefWidth="57.0" text="Nr" />
+                <TableColumn fx:id="mal" prefWidth="93.0" text="Mal" />
+                <TableColumn fx:id="vahid" prefWidth="94.0" text="Vahid" />
+                <TableColumn fx:id="miqdar" prefWidth="97.0" text="Miqdar" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

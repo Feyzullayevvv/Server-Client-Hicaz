@@ -1,0 +1,88 @@
+@keyframes shake {
+    0%, 100% {
+        -fx-translate-x: 0;
+    }
+    10%, 30%, 50%, 70%, 90% {
+        -fx-translate-x: -10px;
+    }
+    20%, 40%, 60%, 80% {
+        -fx-translate-x: 10px;
+    }
+}
+
+.shake {
+    -fx-animation-name: shake;
+    -fx-animation-duration: 0.4s;
+}
+* {
+    -fx-primary : #2A2E37;
+    -fx-secondary : #FFFF8D;
+    -fx-primarytext : #B2B2B2;
+    -fx-blue: #1976D2;
+    -fx-red: #FF0000;
+    -fx-color-1:#1976D2;
+}
+
+.text-field {
+     -fx-background-color: transparent;
+         -fx-text-fill: -fx-primary;
+         -fx-font-size: 12pt;
+         -jfx-focus-color: -fx-secondary;
+         -fx-text-fill: derive(-fx-primarytext, 20%);
+         -fx-border-width: 0 0 1 0;
+         -fx-border-color: -fx-primary;
+         -fx-prompt-text-fill: -fx-primarytext;
+}
+.button{
+    -fx-text-fill: -fx-primarytext;
+    -fx-background-color: -fx-primary;
+    -fx-border-color: -fx-secondary;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12pt;
+}
+.text-field:focused{
+-fx-background-color: transparent;
+         -fx-text-fill: -fx-primary;
+         -fx-font-size: 12pt;
+         -jfx-focus-color: -fx-secondary;
+         -fx-text-fill: derive(-fx-primarytext, 20%);
+         -fx-border-width: 0 0 1 0;
+         -fx-border-color: -fx-secondary;
+         -fx-prompt-text-fill: -fx-primarytext;
+}
+.button:hover, .button:focused{
+    -fx-border-color: -fx-secondary;
+    -fx-background-color: -fx-secondary;
+    -fx-text-fill: -fx-primary;
+}
+.glyph-icon
+{
+    -fx-fill: -fx-primarytext;
+}
+
+.toggle-button {
+    /* Define the button's appearance for the unselected state */
+    -fx-background-color: gray;
+    -fx-background-radius: 15;
+    -fx-shape: "M 0 15 Q 0 0 15 0 L 89 0 Q 104 0 104 15 L 104 14 Q 104 29 89 29 L 15 29 Q 0 29 0 14 Z";
+    -fx-padding: 0;
+}
+
+.toggle-button:selected {
+    /* Define the button's appearance for the selected (pressed) state */
+    -fx-background-color: green;
+    -fx-background-radius: 15;
+    -fx-shape: "M 0 15 Q 0 0 15 0 L 89 0 Q 104 0 104 15 L 104 14 Q 104 29 89 29 L 15 29 Q 0 29 0 14 Z";
+    -fx-padding: 0;
+}
+
+.toggle-button .circle {
+    /* Define the appearance of the small circle */
+    -fx-background-color: white;
+    -fx-background-radius: 50%;
+    -fx-min-width: 15px;
+    -fx-min-height: 15px;
+    -fx-transition: transform 0.2s; /* Use transform instead of translateX */
+}
+

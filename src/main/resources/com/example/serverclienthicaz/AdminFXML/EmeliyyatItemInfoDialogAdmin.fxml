@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="285.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.AdminGUI.EmeliyyatItemInfoDialogAdmin">
+   <children>
+      <TableView fx:id="receptItemTableView" layoutX="133.0" layoutY="60.0" prefHeight="145.0" prefWidth="303.0">
+        <columns>
+          <TableColumn fx:id="receptNr" prefWidth="75.0" text="Nr" />
+          <TableColumn fx:id="receptMal" prefWidth="75.0" text="Mal" />
+            <TableColumn fx:id="receptVahid" prefWidth="75.0" text="Vahid" />
+            <TableColumn fx:id="receptMiqdar" prefWidth="75.0" text="Miqdar" />
+        </columns>
+      </TableView>
+      <TextField fx:id="receptNRTextField" editable="false" layoutX="77.0" layoutY="107.0" prefHeight="26.0" prefWidth="42.0" />
+      <Label layoutX="8.0" layoutY="107.0" prefHeight="26.0" prefWidth="55.0" text="Reçept ">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

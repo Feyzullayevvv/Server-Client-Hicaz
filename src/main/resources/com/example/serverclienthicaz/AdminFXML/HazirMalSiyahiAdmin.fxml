@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="hazirMalSiyahiPane" prefHeight="478.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.AdminGUI.HazirMalSiyahiAdminController">
+   <children>
+      <TableView fx:id="hazirmalsiyahiTableView" layoutX="21.0" layoutY="76.0" onKeyPressed="#handleKeyPressed" prefHeight="351.0" prefWidth="770.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="147.15027236938477" text="Id" />
+          <TableColumn fx:id="name" prefWidth="597.8497161865234" text="Məhsul" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TextField fx:id="searchBar" layoutX="232.0" layoutY="40.0" onKeyReleased="#handleKeyReleased" prefHeight="29.0" prefWidth="169.0" promptText="Məhsul adı">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Button layoutX="690.0" layoutY="22.0" mnemonicParsing="false" onAction="#createNewHazirMal" prefHeight="33.0" prefWidth="109.0" stylesheets="@../AdminCss/button.css" text="Yeni məhsul">
+      </Button>
+   </children>
+</AnchorPane>

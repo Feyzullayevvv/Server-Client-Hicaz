@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="438.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.ProsesAnbarGUI.HazirMalSechimiDialog">
+    <children>
+        <TableView fx:id="malSiyahiTableView" layoutX="29.0" layoutY="60.0" prefHeight="314.0" prefWidth="384.0">
+            <columns>
+                <TableColumn fx:id="id" minWidth="0.0" prefWidth="128.5" text="Id" />
+                <TableColumn fx:id="name" prefWidth="254.5" text="Məhsul" />
+            </columns>
+        </TableView>
+        <TextField fx:id="search" layoutX="228.0" layoutY="28.0" onKeyReleased="#handleKeyReleased" prefHeight="26.0" prefWidth="126.0" promptText="Məhsul Adı" />
+    </children>
+</AnchorPane>

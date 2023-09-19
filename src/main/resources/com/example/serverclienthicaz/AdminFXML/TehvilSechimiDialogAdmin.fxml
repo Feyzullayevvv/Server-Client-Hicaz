@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="tehvilPane" prefHeight="400.0" prefWidth="438.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.AdminGUI.TehvilSechimiDialogAdmin">
+   <children>
+      <TableView fx:id="tehvilTableView" layoutX="25.0" layoutY="109.0" onMouseClicked="#handleClick" prefHeight="200.0" prefWidth="388.0">
+        <columns>
+          <TableColumn fx:id="nr" prefWidth="95.0" text="Nr" />
+          <TableColumn fx:id="tarix" prefWidth="131.0" text="Tarix" />
+            <TableColumn fx:id="tehvilci" prefWidth="161.0" text="Təhvilçi" />
+        </columns>
+      </TableView>
+      <ToggleButton fx:id="toggleButton" layoutX="25.0" layoutY="43.0" mnemonicParsing="false" stylesheets="@../ProsesAnbarcss/button.css" text="Bu Gün" />
+   </children>
+</AnchorPane>

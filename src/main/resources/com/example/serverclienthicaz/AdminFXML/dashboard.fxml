@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="478.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.AdminGUI.DashBoardController">
+   <children>
+      <Pane layoutX="12.0" layoutY="116.0" prefHeight="232.0" prefWidth="192.0" styleClass="rounded-pane" stylesheets="@../ProsesAnbarcss/pane.css">
+         <children>
+            <Label layoutX="19.0" layoutY="28.0" prefHeight="40.0" prefWidth="165.0" text="Anbar Qalıqı">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <TextField fx:id="anbarQaliq" editable="false" layoutX="16.0" layoutY="138.0" prefHeight="36.0" prefWidth="122.0" />
+            <Label layoutX="153.0" layoutY="144.0" prefHeight="20.0" prefWidth="31.0" text=" ₼" />
+         </children>
+      </Pane>
+      <TableView fx:id="anbarTableView" layoutX="308.0" layoutY="116.0" prefHeight="259.0" prefWidth="500.0" visible="false">
+        <columns>
+          <TableColumn fx:id="Nr" prefWidth="75.0" text="Nr" />
+          <TableColumn prefWidth="166.54220581054688" text="Mal" fx:id="xammalMal" />
+            <TableColumn fx:id="vahid" prefWidth="118.48028564453125" text="Vahid" />
+            <TableColumn fx:id="miqdar" prefWidth="140.01971435546875" text="Miqdar" />
+        </columns>
+      </TableView>
+      <ChoiceBox fx:id="choiceBox" layoutX="669.0" layoutY="28.0" prefHeight="26.0" prefWidth="112.0" />
+      <GridPane layoutX="430.0" layoutY="77.0" prefHeight="152.0" prefWidth="371.0" vgap="25.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <DatePicker fx:id="startDatePicker" prefHeight="32.0" prefWidth="171.0" />
+            <DatePicker fx:id="endDatePicker" prefHeight="32.0" prefWidth="171.0" GridPane.columnIndex="1" />
+            <Label fx:id="kgLabel" text="Kg" GridPane.rowIndex="1">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <Label fx:id="metrLabel" text="Metr" GridPane.rowIndex="2">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <Label fx:id="litrLabel" text="Litr" GridPane.rowIndex="3">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <TextField fx:id="kgText" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="metrText" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="litrText" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <TableView fx:id="mexaricInfoTableView" layoutX="421.0" layoutY="251.0" prefHeight="206.0" prefWidth="385.0">
+        <columns>
+          <TableColumn fx:id="MalNr" prefWidth="86.02877807617188" text="Mal Nömrəsi" />
+          <TableColumn fx:id="Mal" prefWidth="94.46231079101562" text="Mal" />
+            <TableColumn fx:id="Vahid" prefWidth="104.03765869140625" text="Vahid" />
+            <TableColumn fx:id="Ceki" prefWidth="100.52325439453125" text="Çəki" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

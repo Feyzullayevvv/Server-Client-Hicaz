@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="kreditorPane" prefHeight="478.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.AdminGUI.KreditorAdmin">
+    <children>
+        <TableView fx:id="kreditorTableView" layoutX="63.0" layoutY="77.0" onMouseClicked="#handleClick" prefHeight="345.0" prefWidth="410.0">
+            <columns>
+                <TableColumn fx:id="nr" prefWidth="75.0" text="Nr" />
+                <TableColumn fx:id="name" prefWidth="334.00000762939453" text="Kreditor" />
+            </columns>
+        </TableView>
+        <TextField fx:id="searchBar" layoutX="159.0" layoutY="46.0" onKeyReleased="#handleKeyReleased" prefHeight="26.0" prefWidth="244.0" promptText="Kreditor Adı" />
+        <Button layoutX="641.0" layoutY="17.0" mnemonicParsing="false" onAction="#createNewKreditor" prefHeight="22.0" prefWidth="154.0" stylesheets="@../AdminCss/button.css" text="Yeni Kreditor" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="emeliyyatPane" prefHeight="478.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.AdminGUI.EmeliyyatController">
+   <children>
+      <TableView fx:id="emeliyyatTableView" layoutX="24.0" layoutY="75.0" onKeyPressed="#handleKeyPressed" onMouseClicked="#handleClick" prefHeight="377.0" prefWidth="765.0">
+        <columns>
+          <TableColumn fx:id="nr" prefWidth="135.68244171142578" text="Nr" />
+          <TableColumn fx:id="tarix" prefWidth="627.9999847412109" text="Tarix" />
+        </columns>
+      </TableView>
+      <Button layoutX="690.0" layoutY="27.0" mnemonicParsing="false" onAction="#createNewEmeliyyat" stylesheets="@../AdminCss/button.css" text="Yeni Əməliyyat" />
+      <DatePicker fx:id="startDatePicker" layoutX="179.0" layoutY="14.0" prefHeight="26.0" prefWidth="159.0" promptText="Başlanğıc Tarix" />
+      <DatePicker fx:id="endDatePicker" layoutX="385.0" layoutY="14.0" prefHeight="26.0" prefWidth="159.0" promptText="Son Tarix" />
+   </children>
+</AnchorPane>

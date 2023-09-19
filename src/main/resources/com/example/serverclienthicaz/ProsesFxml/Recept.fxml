@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="receptPane" prefHeight="596.0" prefWidth="1021.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.ProsesAnbarGUI.ReceptController">
+   <children>
+      <TableView fx:id="receptTableView" layoutX="78.0" layoutY="71.0" onMouseClicked="#handleClick" prefHeight="456.0" prefWidth="883.0">
+        <columns>
+          <TableColumn fx:id="nr" prefWidth="107.29498291015625" text="Nr" />
+          <TableColumn fx:id="name" prefWidth="272.3876647949219" text="Reçept Adı" />
+            <TableColumn fx:id="itki" prefWidth="151.85693359375" text="İtki" />
+            <TableColumn fx:id="qaliq" prefWidth="187.64306640625" text="Qalıq" />
+            <TableColumn fx:id="sonQaliq" prefWidth="161.32452392578125" text="Son Qaliq" />
+        </columns>
+      </TableView>
+      <TextField fx:id="searchField" layoutX="260.0" layoutY="33.0" onKeyReleased="#handleKeyReleased" promptText="Reçept Adı" />
+   </children>
+</AnchorPane>

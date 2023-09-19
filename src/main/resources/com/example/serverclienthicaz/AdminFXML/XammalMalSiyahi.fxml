@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="malSiyahiPane" prefHeight="478.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.AdminGUI.XammalMalSiyahiController">
+   <children>
+      <TableView fx:id="malTableView" layoutX="6.0" layoutY="104.0" onKeyPressed="#handleKeyPressed" prefHeight="354.0" prefWidth="808.0" onMouseClicked="#handleClick">
+        <columns>
+          <TableColumn fx:id="Nr" prefWidth="101.44634246826172" text="Nr" />
+          <TableColumn fx:id="malName" prefWidth="224.2746353149414" text="Mal adı" />
+            <TableColumn fx:id="Vahid" prefWidth="216.90570068359375" text="Vahid" />
+            <TableColumn fx:id="ortaQiymet" prefWidth="264.0943298339844" text="Orta qiymət" />
+        </columns>
+      </TableView>
+      <Button layoutX="686.0" layoutY="16.0" mnemonicParsing="false" onAction="#createYeniMal" prefHeight="22.0" prefWidth="112.0" stylesheets="@../AdminCss/button.css" text="Yeni Mal" />
+      <TextField fx:id="searchField" layoutX="133.0" layoutY="69.0" onKeyReleased="#handleKeyReleased" prefHeight="26.0" prefWidth="198.0" promptText="Mal adı" />
+   </children>
+</AnchorPane>

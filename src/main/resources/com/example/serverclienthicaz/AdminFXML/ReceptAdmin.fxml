@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="receptPane" prefHeight="478.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.AdminGUI.ReceptAdminController">
+   <children>
+      <TableView fx:id="receptTableView" layoutX="15.0" layoutY="71.0" onKeyPressed="#handleKeyPressed" onMouseClicked="#handleClick" prefHeight="394.0" prefWidth="794.0">
+        <columns>
+          <TableColumn fx:id="nr" prefWidth="107.29498291015625" text="Nr" />
+          <TableColumn fx:id="name" prefWidth="273.437744140625" text="Reçept Adı" />
+            <TableColumn fx:id="itki" prefWidth="133.56228637695312" text="İtki" />
+            <TableColumn fx:id="qaliq" prefWidth="127.4488525390625" text="Qalıq" />
+            <TableColumn fx:id="sonQaliq" prefWidth="151.05108642578125" text="Son Qaliq" />
+        </columns>
+      </TableView>
+      <TextField fx:id="searchField" layoutX="159.0" layoutY="43.0" onKeyReleased="#handleKeyReleased" promptText="Reçept Adı" />
+      <Button layoutX="701.0" layoutY="15.0" mnemonicParsing="false" onAction="#createNewRecept" prefHeight="27.0" prefWidth="101.0" stylesheets="@../AdminCss/button.css" text="Yeni Reçept" />
+   </children>
+</AnchorPane>

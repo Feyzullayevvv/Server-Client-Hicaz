@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="insertAnbarPane" prefHeight="478.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.AdminGUI.insertAnbarAdmin">
+   <children>
+      <TableView fx:id="anbarItemsTableView" layoutX="430.0" layoutY="67.0" prefHeight="296.0" prefWidth="379.0">
+        <columns>
+          <TableColumn fx:id="Mal" prefWidth="82.26406860351562" text="Mal" />
+          <TableColumn fx:id="Vahid" prefWidth="67.13201904296875" text="Vahid" />
+            <TableColumn fx:id="Miqdar" minWidth="0.0" prefWidth="119.34417724609375" text="Miqdar" />
+            <TableColumn fx:id="Mebleg" prefWidth="110.65582275390625" text="Məbləğ" />
+        </columns>
+      </TableView>
+      <GridPane hgap="20.0" layoutX="11.0" layoutY="142.0" prefHeight="304.0" prefWidth="404.0" vgap="20.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="213.282958984375" minWidth="10.0" prefWidth="198.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.5" minWidth="10.0" prefWidth="209.5" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="30.0" minHeight="0.0" prefHeight="0.0" />
+          <RowConstraints maxHeight="54.89678955078125" minHeight="0.0" prefHeight="27.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="54.89678955078125" minHeight="5.10321044921875" prefHeight="31.983612060546875" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="23.61846923828125" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="51.660247802734375" minHeight="0.0" prefHeight="22.38153076171875" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="51.660247802734375" minHeight="10.0" prefHeight="11.476898193359375" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="51.660247802734375" minHeight="10.0" prefHeight="45.471588134765625" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="51.660247802734375" minHeight="10.0" prefHeight="45.471588134765625" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Mal" GridPane.rowIndex="1">
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="25.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="38.0" prefWidth="90.0" text="Miqdar" GridPane.rowIndex="3">
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="33.0" prefWidth="154.0" text="Məbləğ" GridPane.rowIndex="4">
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="miqdarText" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="meblegText" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Vahid" GridPane.rowIndex="2">
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="vahidText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <TextField fx:id="malText" layoutX="22.0" layoutY="8.0" prefHeight="32.0" prefWidth="157.0" />
+                  <Button layoutX="168.0" layoutY="33.0" mnemonicParsing="false" onAction="#createMalSiyahi" prefHeight="15.0" prefWidth="23.0" text="..">
+                     <font>
+                        <Font size="6.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Button mnemonicParsing="false" onAction="#handleDelete" prefHeight="50.0" prefWidth="135.0" stylesheets="@../AdminCss/button.css" text="Sil" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets left="25.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="elaveEtButton" mnemonicParsing="false" onAction="#onElaveEtClicked" prefHeight="52.0" prefWidth="109.0" stylesheets="@../AdminCss/button.css" text="Əlavə Et" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets left="25.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+      <Button fx:id="bittiButton" layoutX="681.0" layoutY="414.0" mnemonicParsing="false" onAction="#handleBitti" prefHeight="32.0" prefWidth="119.0" stylesheets="@../AdminCss/button.css" text="Biti" />
+   </children>
+</AnchorPane>

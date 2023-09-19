@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1300.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.ProsesAnbarGUI.MainController">
+    <top>
+        <AnchorPane prefHeight="123.0" prefWidth="1300.0" style="-fx-background-color: #dd4f16;">
+            <children>
+                <Label layoutX="137.0" layoutY="39.0" text="Daxili Proses" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="32.0" />
+                    </font>
+                </Label>
+                <Button layoutX="1197.0" layoutY="42.0" mnemonicParsing="false" onAction="#handleExit" stylesheets="@../ProsesAnbarcss/styles.css" text="Çıxış" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="1197.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="42.0">
+                    <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button:hover" />
+                    </styleClass>
+                </Button>
+            </children>
+        </AnchorPane>
+    </top>
+    <left>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="288.0" style="-fx-background-color: #ffffff;">
+            <children>
+                <ImageView fitHeight="139.0" fitWidth="196.0" layoutX="71.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/images.png" />
+                    </image>
+                </ImageView>
+                <GridPane layoutY="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="291.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="85.0">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints percentHeight="16.67" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="153.0" minHeight="84.73295593261719" percentHeight="16.67" prefHeight="153.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="168.0" minHeight="0.0" percentHeight="16.67" prefHeight="47.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="130.0" minHeight="2.0" percentHeight="16.67" prefHeight="123.0" vgrow="SOMETIMES" />
+                        <RowConstraints percentHeight="16.67" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="144.0" minHeight="45.0" percentHeight="16.67" prefHeight="141.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="125.0" minHeight="26.0" percentHeight="16.67" prefHeight="29.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="263.0" stylesheets="@../ProsesAnbarcss/button.css" text="Əməliyyat" onAction="#createEmeliyyatMenu">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <styleClass>
+                                <String fx:value="button:hover" />
+                                <String fx:value="button:pressed" />
+                                <String fx:value="button" />
+                            </styleClass>
+                            <GridPane.margin>
+                                <Insets left="10.0" />
+                            </GridPane.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#createReceptMenu" prefHeight="39.0" prefWidth="263.0" stylesheets="@../ProsesAnbarcss/button.css" text="Reçept" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <styleClass>
+                                <String fx:value="button:hover" />
+                                <String fx:value="button:pressed" />
+                                <String fx:value="button" />
+                            </styleClass>
+                            <GridPane.margin>
+                                <Insets left="10.0" />
+                            </GridPane.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#createTehvilMenu" prefHeight="39.0" prefWidth="263.0" stylesheets="@../ProsesAnbarcss/button.css" text="Təhvil" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <styleClass>
+                                <String fx:value="button:hover" />
+                                <String fx:value="button:pressed" />
+                                <String fx:value="button" />
+                            </styleClass>
+                            <GridPane.margin>
+                                <Insets left="10.0" />
+                            </GridPane.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#createHazirMehsulAnbar" prefHeight="39.0" prefWidth="263.0" stylesheets="@../ProsesAnbarcss/button.css" text="Hazır  Məhsul Anbar" GridPane.rowIndex="4">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <styleClass>
+                                <String fx:value="button:hover" />
+                                <String fx:value="button:pressed" />
+                                <String fx:value="button" />
+                            </styleClass>
+                            <GridPane.margin>
+                                <Insets left="10.0" />
+                            </GridPane.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#createHazirMalSiyahi" prefHeight="39.0" prefWidth="263.0" stylesheets="@../ProsesAnbarcss/button.css" text="Hazır Mal Siyahı" GridPane.rowIndex="5">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <styleClass>
+                                <String fx:value="button:hover" />
+                                <String fx:value="button:pressed" />
+                                <String fx:value="button" />
+                            </styleClass>
+                            <GridPane.margin>
+                                <Insets left="10.0" />
+                            </GridPane.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#createMalSiyahi" prefHeight="39.0" prefWidth="263.0" stylesheets="@../ProsesAnbarcss/button.css" text="Xammal Mal Siyahi" GridPane.rowIndex="6">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <styleClass>
+                                <String fx:value="button:hover" />
+                                <String fx:value="button:pressed" />
+                                <String fx:value="button" />
+                            </styleClass>
+                            <GridPane.margin>
+                                <Insets left="10.0" />
+                            </GridPane.margin>
+                        </Button>
+                  <Button mnemonicParsing="false" onAction="#createProsesAnbar" prefHeight="39.0" prefWidth="263.0" stylesheets="@../ProsesAnbarcss/button.css" text="Proses Anbar" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="button:hover" />
+                        <String fx:value="button:pressed" />
+                        <String fx:value="button" />
+                     </styleClass>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                    </children>
+                </GridPane>
+            </children>
+        </AnchorPane>
+    </left>
+    <right>
+        <AnchorPane fx:id="holdPane" prefHeight="596.0" prefWidth="1021.0" />
+    </right>
+</BorderPane>

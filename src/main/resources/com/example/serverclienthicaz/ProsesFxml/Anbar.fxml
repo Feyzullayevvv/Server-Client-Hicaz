@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="596.0" prefWidth="1021.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.ProsesAnbarGUI.AnbarController">
+   <children>
+      <TableView fx:id="anbarTableView" layoutX="94.0" layoutY="83.0" prefHeight="445.0" prefWidth="844.0">
+        <columns>
+          <TableColumn fx:id="nr" prefWidth="75.0" text="Nr" />
+          <TableColumn fx:id="malNr" prefWidth="118.81419372558594" text="MalNr" />
+            <TableColumn fx:id="mal" prefWidth="241.68580627441406" text="Mal" />
+            <TableColumn fx:id="vahid" prefWidth="199.34722900390625" text="Vahid" />
+            <TableColumn fx:id="miqdar" prefWidth="209.15277099609375" text="Miqdar" />
+        </columns>
+      </TableView>
+      <TextField fx:id="searchField" layoutX="330.0" layoutY="41.0" onKeyReleased="#handleKeyReleased" promptText="Mal adı" />
+   </children>
+</AnchorPane>

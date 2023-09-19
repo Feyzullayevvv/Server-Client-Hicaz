@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="mexaricPanel" onKeyPressed="#handleKeyPressed" prefHeight="478.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.AdminGUI.MexaricAdminController">
+    <children>
+        <TableView fx:id="mexaricView" layoutX="14.0" layoutY="102.0" onMouseClicked="#handleClick" prefHeight="325.0" prefWidth="788.0">
+            <columns>
+                <TableColumn fx:id="Nr" prefWidth="132.5427074432373" text="Nr" />
+                <TableColumn fx:id="Tarix" prefWidth="378.15333557128906" text="Tarix" />
+                <TableColumn fx:id="TehvilAlan" prefWidth="274.7843017578125" text="Təhvil alan" />
+            </columns>
+        </TableView>
+        <TextField fx:id="search" layoutX="556.0" layoutY="69.0" onKeyReleased="#handleKeyReleased" prefHeight="26.0" prefWidth="203.0" promptText="Təhvil Alan" />
+        <DatePicker fx:id="endDatePicker" layoutX="223.0" layoutY="58.0" prefHeight="26.0" prefWidth="123.0" promptText="Son Tarix" />
+        <DatePicker fx:id="startDatePicker" layoutX="222.0" layoutY="14.0" prefHeight="26.0" prefWidth="123.0" promptText="Başlanğıc Tarix" />
+        <Button layoutX="673.0" layoutY="14.0" mnemonicParsing="false" onAction="#createNewMexaric" prefHeight="27.0" prefWidth="123.0" stylesheets="@../AdminCss/button.css" text="Yeni Məxaric" />
+        <ToggleButton fx:id="toggleButton" layoutX="14.0" layoutY="71.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="127.0" stylesheets="@../Anbarcss/button.css" text="Bu günki Məxaric" textFill="#f7ff82" />
+        <Button fx:id="printButton" layoutX="662.0" layoutY="436.0" mnemonicParsing="false" onAction="#handlePrintButtonAction" prefHeight="25.0" prefWidth="127.0" stylesheets="@../AdminCss/button.css" text="Print" />
+    </children>
+</AnchorPane>

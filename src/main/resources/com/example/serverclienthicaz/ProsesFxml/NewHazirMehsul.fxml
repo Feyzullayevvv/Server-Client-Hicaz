@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="NewHazirAnbar" prefHeight="596.0" prefWidth="1021.0" style="-fx-background-color: #290903;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.ProsesAnbarGUI.NewHazirMehsulController">
+   <children>
+      <TableView fx:id="malTableView" layoutX="582.0" layoutY="167.0" prefHeight="282.0" prefWidth="425.0">
+        <columns>
+          <TableColumn fx:id="mal" prefWidth="143.78900146484375" text="Məhsul" />
+          <TableColumn fx:id="vahid" prefWidth="113.21099853515625" text="Vahid" />
+            <TableColumn fx:id="miqdar" prefWidth="165.95281982421875" text="Miqdar" />
+        </columns>
+      </TableView>
+      <GridPane layoutX="67.0" layoutY="94.0" prefHeight="206.0" prefWidth="310.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Məhsul" textFill="WHITE">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Label text="Vahid" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Label text="Miqdar" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <TextField editable="false" text="kg" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="miqdarText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <TextField fx:id="mehsulText" editable="false" layoutY="5.0" prefHeight="33.0" prefWidth="154.0" />
+                  <Button layoutX="100.0" layoutY="24.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="55.0" text="..." onAction="#createMalSiyahi" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="elaveEtButton" mnemonicParsing="false" onAction="#onElaveEtClicked" prefHeight="35.0" prefWidth="126.0" stylesheets="@../ProsesAnbarcss/button.css" text="Əlavə Et" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="silButton" mnemonicParsing="false" onAction="#handleDelete" prefHeight="35.0" prefWidth="126.0" stylesheets="@../ProsesAnbarcss/button.css" text="Sil" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <Button fx:id="bittiButton" layoutX="908.0" layoutY="529.0" mnemonicParsing="false" onAction="#handleBitti" prefHeight="26.0" prefWidth="70.0" stylesheets="@../ProsesAnbarcss/button.css" text="Biti" />
+      <Button layoutX="34.0" layoutY="527.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="26.0" prefWidth="70.0" stylesheets="@../ProsesAnbarcss/button.css" text="Geri" />
+   </children>
+</AnchorPane>

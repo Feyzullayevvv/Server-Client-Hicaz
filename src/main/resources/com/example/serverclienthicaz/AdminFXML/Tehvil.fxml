@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="tehvilPane" onKeyPressed="#handleKeyPressed" prefHeight="478.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.AdminGUI.TehvilController">
+   <children>
+      <TableView fx:id="tehvilTableView" layoutX="9.0" layoutY="86.0" onMouseClicked="#handleClick" prefHeight="357.0" prefWidth="803.0">
+        <columns>
+          <TableColumn fx:id="nr" prefWidth="142.0" text="Nr" />
+          <TableColumn fx:id="tarix" prefWidth="217.0" text="Tarix" />
+            <TableColumn fx:id="tehvilci" prefWidth="222.97091674804688" text="Tehvil Alan" />
+            <TableColumn fx:id="mexaricNr" prefWidth="229.02911376953125" text="MexaricNR" />
+        </columns>
+      </TableView>
+      <DatePicker fx:id="startDatePicker" layoutX="158.0" layoutY="15.0" promptText="Başlanğıc Tarix" />
+      <DatePicker fx:id="endDatePicker" layoutX="158.0" layoutY="53.0" promptText="Son Tarix" />
+      <ToggleButton fx:id="toggleButton" layoutX="23.0" layoutY="27.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="97.0" stylesheets="@../ProsesAnbarcss/button.css" text="Bu Gün" />
+      <Button layoutX="687.0" layoutY="51.0" mnemonicParsing="false" onAction="#handlePrintButtonAction" prefHeight="28.0" prefWidth="99.0" stylesheets="@../AdminCss/button.css" text="Print" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="478.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serverclienthicaz.Server.AdminGUI.ProsesAnbarControllerAdmin">
+   <children>
+      <TableView fx:id="anbarTableView" layoutX="15.0" layoutY="83.0" onMouseClicked="#handleClick" prefHeight="332.0" prefWidth="786.0">
+        <columns>
+          <TableColumn fx:id="nr" prefWidth="75.0" text="Nr" />
+          <TableColumn fx:id="malNr" prefWidth="118.81419372558594" text="MalNr" />
+            <TableColumn fx:id="mal" prefWidth="200.01617431640625" text="Mal" />
+            <TableColumn fx:id="vahid" prefWidth="193.98385620117188" text="Vahid" />
+            <TableColumn fx:id="miqdar" prefWidth="197.02374267578125" text="Miqdar" />
+        </columns>
+      </TableView>
+      <TextField fx:id="searchField" layoutX="245.0" layoutY="46.0" onKeyReleased="#handleKeyReleased" prefHeight="18.0" prefWidth="119.0" promptText="Mal adı" />
+      <Button layoutX="31.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSifirla" prefHeight="27.0" prefWidth="70.0" stylesheets="@../AdminCss/button.css" text="Sıfırla" />
+   </children>
+</AnchorPane>
