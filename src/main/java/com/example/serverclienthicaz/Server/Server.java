@@ -402,6 +402,12 @@ public class Server {
         anbarData.close();
     }
 
+    public void insertProsesAnbar(int malNr,String mal,String vahid,double ceki){
+        prosesData.open();
+        prosesData.insertProsesAnbar(malNr,mal,vahid,ceki);
+        prosesData.close();
+    }
+
 
         public static void main(String[] args) {
         Server server= new Server();

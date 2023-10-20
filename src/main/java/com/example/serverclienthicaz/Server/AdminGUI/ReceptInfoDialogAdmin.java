@@ -11,6 +11,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.StageStyle;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -117,6 +118,50 @@ public class ReceptInfoDialogAdmin {
             receptItemObservableList.add(r);
         }
         receptItemTableView.setItems(receptItemObservableList);
+    }
+
+    public void yeniButtonClicked(){
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.initOwner(receptItemPane.getScene().getWindow());
+        dialog.setTitle("Information");
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/com/example/serverclienthicaz/AdminFXML/addNewReceptItemInfoPane.fxml"));
+        try {
+            dialog.getDialogPane().setContent(fxmlLoader.load());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+        dialog.initStyle(StageStyle.UTILITY);
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+        dialog.initStyle(StageStyle.UTILITY);
+        AddNewItemReceptInfoPane controller = fxmlLoader.getController();
+        controller.init(client,recept);
+        Button okButton = (Button) dialog.getDialogPane().lookupButton(ButtonType.OK);
+        okButton.setDisable(true);
+
+        controller.getMiqdarTextField().textProperty().addListener((observable, oldValue, newValue) -> {
+            updateOkButtonDisableProperty(okButton,controller.getMiqdarTextField(),controller.getMalTextField());
+        });
+        controller.getMalTextField().textProperty().addListener((observable, oldValue, newValue) -> {
+            updateOkButtonDisableProperty(okButton,controller.getMiqdarTextField(),controller.getMalTextField());
+        });
+
+        Optional<ButtonType> result = dialog.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            controller.updateRecept();
+        }
+        populate();
+
+
+    }
+
+    private void updateOkButtonDisableProperty(Button okButton, TextField miqdarTextField, TextField malTextField) {
+        if (miqdarTextField.getText().isEmpty() || !areFieldsValid(miqdarTextField) || malTextField.getText().isEmpty()){
+            okButton.setDisable(true);
+        }else{
+            okButton.setDisable(false);
+        }
     }
 
 }

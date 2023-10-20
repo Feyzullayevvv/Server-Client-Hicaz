@@ -340,6 +340,12 @@ public class ClientHandler extends Thread{
                     int nr= Integer.parseInt(reader.readLine());
                     double ortaGiymet=Double.parseDouble(reader.readLine());
                     server.updateXammalSiyahi(nr,ortaGiymet);
+                }if (message.equals("INSERTPROSESANBAR")){
+                    int malNr=Integer.parseInt(reader.readLine());
+                    String mal = reader.readLine();
+                    String vahid= reader.readLine();
+                    double ceki = Double.parseDouble(reader.readLine());
+                    server.insertProsesAnbar(malNr,mal,vahid,ceki);
                 }
                 System.out.println("recieved message " + message);
             }

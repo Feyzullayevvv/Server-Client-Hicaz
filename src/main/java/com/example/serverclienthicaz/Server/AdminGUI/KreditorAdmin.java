@@ -61,6 +61,7 @@ public class KreditorAdmin {
     }
 
 
+
     public void handleKeyReleased(KeyEvent event){
         if (event.getEventType() == KeyEvent.KEY_RELEASED){
             String name = searchBar.getText();

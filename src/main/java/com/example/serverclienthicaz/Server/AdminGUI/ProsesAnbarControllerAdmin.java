@@ -135,6 +135,49 @@ public class ProsesAnbarControllerAdmin {
         }
     }
 
+
+    public void insertHazirAnbar(){
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.initOwner(anbarTableView.getScene().getWindow());
+        dialog.setTitle("Admin");
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/com/example/serverclienthicaz/AdminFXML/newProsesItem.fxml"));
+        try {
+            dialog.getDialogPane().setContent(fxmlLoader.load());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+        dialog.initStyle(StageStyle.UTILITY);
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+        newProsesItemController controller = fxmlLoader.getController();
+        controller.init(client );
+
+        Button okButton = (Button) dialog.getDialogPane().lookupButton(ButtonType.OK);
+        okButton.setDisable(true);
+
+        controller.getCekiText().textProperty().addListener((observable, oldValue, newValue) -> {
+            updateNewProsesButton(okButton,controller.getCekiText(),controller.getMalText());
+        });
+        controller.getMalText().textProperty().addListener(((observableValue, s, t1) -> {
+            updateNewProsesButton(okButton,controller.getCekiText(),controller.getMalText());
+        }));
+
+        Optional<ButtonType> result = dialog.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            controller.insertMal();
+        }
+        populate();
+    }
+
+    private void updateNewProsesButton(Button okButton, TextField cekiText,TextField malText){
+        if (cekiText.getText().isEmpty() || !areFieldsValid(cekiText) || malText.getText().isEmpty()){
+            okButton.setDisable(true);
+        }else{
+            okButton.setDisable(false);
+        }
+    }
+
     public void setClient(Client client) {
         this.client = client;
     }

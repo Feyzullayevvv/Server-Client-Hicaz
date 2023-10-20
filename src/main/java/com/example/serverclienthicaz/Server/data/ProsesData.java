@@ -217,7 +217,6 @@ public class ProsesData {
             COLUMN_RECEPTITEMS_NR + ", " + COLUMN_RECEPTITEMS_MAL + ", " + COLUMN_RECEPTITEMS_VAHID +
             ", " + COLUMN_RECEPTITEMS_MIQDAR + ", " +  COLUMN_RECEPTITEMS_RECEPTNR  + " ) VALUES(?,?,?,?,?)";
 
-
     private static final String CONNECTION_STRING=DB_PATH+DB_NAME;
     public void open(){
         try {
@@ -830,7 +829,7 @@ public class ProsesData {
         }
 
     }
-    private void insertProsesAnbar(int malNr,String mal,String vahid,double ceki){
+    public void insertProsesAnbar(int malNr,String mal,String vahid,double ceki){
         try {
             connection.setAutoCommit(false);
             if (doesExistProsesAnbar(malNr)){

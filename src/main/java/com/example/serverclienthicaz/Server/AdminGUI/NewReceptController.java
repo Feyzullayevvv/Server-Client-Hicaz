@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.StageStyle;
@@ -73,6 +74,15 @@ public class NewReceptController {
         itkitext.textProperty().addListener((observable, oldValue, newValue) -> updateSonQaliq());
         qaliqText.textProperty().addListener((observable, oldValue, newValue) -> updateSonQaliq());
         silButton.setDisable(true);
+        receptItemsTableView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                // An item is selected, so enable the "Sil" button
+                silButton.setDisable(false);
+            } else {
+                // No item is selected, so disable the "Sil" button
+                silButton.setDisable(true);
+            }
+        });
         initList();
 
     }
@@ -144,18 +154,24 @@ public class NewReceptController {
         miqdartext.clear();
     }
 
-    public void onSilClicked(){
-        ReceptItem selectedItem = receptItemsTableView.getSelectionModel().getSelectedItem();
-        try {
-            receptItemList.remove(selectedItem);
-            initList();
+    public void handleClick(MouseEvent e){
+        if ((e.getClickCount() == 2) && receptItemsTableView.getSelectionModel().getSelectedItem()!=null){
+            silButton.setDisable(false);
         }
-        catch (Exception e){
-            System.out.println(e.getMessage());
-            Alert  alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Xəta");
-            alert.setContentText(e.getMessage());
-            alert.showAndWait();
+    }
+    public void onSilClicked(){
+        if (receptItemsTableView.getSelectionModel().getSelectedItem()!=null) {
+            ReceptItem selectedItem = receptItemsTableView.getSelectionModel().getSelectedItem();
+            try {
+                receptItemList.remove(selectedItem);
+                initList();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Xəta");
+                alert.setContentText(e.getMessage());
+                alert.showAndWait();
+            }
         }
     }
 
